@@ -26,13 +26,36 @@ api_key = '58d0b89c8477db6000a0ecc11e251280cdb060751bdeaf5ed297c16f4bf5d027'
 def consultar_cnpj(cnpj):
     url = f'https://receitaws.com.br/account/cnpj{cnpj}'
     headers = {'Authorization': f'Bearer {api_key}'}
-    response = requests.get(url, headers=headers)
+    #response = requests.get(url, headers=headers)
 
-    if response.status_code == 200:
-        return response.json() #Retorna os dados em JSON se a requisição for bem sucedida
-    else:
-        print(f'Erro ao consultar CNPJ {cnpj}: {response.status_code} - {response.text}')
-        return None  
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+
+        # Logar o status e o conteúdo da resposta
+        logging.info(f"Status da resposta para o CNPJ {cnpj}: {response.status_code}")
+        logging.info(f"Conteúdo da resposta: {response.text}")
+
+         # Verifique se a resposta é válida antes de tentar transformá-la em JSON
+        if response.status_code == 200:
+            return response.json()
+        else:
+            logging.warning(f"Resposta não OK para o CNPJ {cnpj}: {response.status_code}")
+            return None
+
+        #return response.json()
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Erro ao consultar o CNPJ {cnpj}: {e}")
+        return None
+
+    # if response.status_code == 200:
+    #     return response.json() #Retorna os dados em JSON se a requisição for bem sucedida
+    # else:
+    #     print(f'Erro ao consultar CNPJ {cnpj}: {response.status_code} - {response.text}')
+
+    #     print(f'Status Code: {response.status_code}')
+    #     print(f'Response Text: {response.text}')
+    #     return None  
 
 def consultar_cnpj_massa(cnpjs):
     resultados = []
@@ -74,10 +97,12 @@ def json_para_excel(arquivo_json, excel_saida):
 #Caminho das informações pelas funções
 
 #Caminho para o arquivo Excel com os CNPJs
-arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler.xlsx'
+#arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler.xlsx'
+
 
 #Lendo os CNPJs do arquivo Excel
-cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)
+#cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)
+cnpjs = '33014556009819'
 
 #Realizando as consultas e armazenamento os resultados
 resultados = consultar_cnpj_massa(cnpjs)
