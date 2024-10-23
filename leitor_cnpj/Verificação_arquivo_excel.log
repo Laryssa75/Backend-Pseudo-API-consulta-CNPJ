@@ -1,0 +1,18 @@
+2024-10-23 11:17:30,696 - INFO - Aguardando 1 minuto para a próxima consulta...
+2024-10-23 11:21:21,200 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br33014556009819:443
+2024-10-23 11:22:30,810 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br33014556009819:443
+2024-10-23 11:24:03,179 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br:443
+2024-10-23 11:24:03,413 - DEBUG - https://receitaws.com.br:443 "GET /v1/cnpj33014556009819 HTTP/11" 404 None
+2024-10-23 11:24:03,415 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br:443
+2024-10-23 11:24:03,661 - DEBUG - https://receitaws.com.br:443 "GET /v1/cnpj337010000540 HTTP/11" 404 None
+2024-10-23 11:24:03,666 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br:443
+2024-10-23 11:24:03,864 - DEBUG - https://receitaws.com.br:443 "GET /v1/cnpj1612155000141 HTTP/11" 404 None
+2024-10-23 11:24:03,866 - INFO - Aguardando 1 minuto para a próxima consulta...
+2024-10-23 13:28:00,195 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br:443
+2024-10-23 13:28:00,434 - DEBUG - https://receitaws.com.br:443 "GET /v1/cnpj33014556009819 HTTP/11" 404 None
+2024-10-23 13:28:00,438 - INFO -  resultado da conversão de json para excel []
+2024-10-23 13:56:05,225 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br:443
+2024-10-23 13:56:05,533 - DEBUG - https://receitaws.com.br:443 "GET /v1/cnpj33014556009819 HTTP/11" 404 None
+2024-10-23 13:56:05,541 - INFO -  resultado da conversão de json para excel []
+2024-10-23 13:58:39,783 - DEBUG - Starting new HTTPS connection (1): receitaws.com.br:443
+2024-10-23 13:58:40,370 - DEBUG - https://receitaws.com.br:443 "GET /account/cnpj33014556009819 HTTP/11" 200 None
