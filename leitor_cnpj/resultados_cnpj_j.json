@@ -1,1 +1,258 @@
-[]
+[
+    {
+        "abertura": "21/04/1988",
+        "situacao": "BAIXADA",
+        "tipo": "FILIAL",
+        "nome": "LOJAS AMERICANAS S.A.",
+        "porte": "DEMAIS",
+        "natureza_juridica": "204-6 - Sociedade Anônima Aberta",
+        "logradouro": "AVENIDA INTERLAGOS",
+        "numero": "2255",
+        "municipio": "SAO PAULO",
+        "bairro": "STO AMARO",
+        "uf": "SP",
+        "cep": "04.661-903",
+        "email": "sede@lasa.com.br",
+        "telefone": "(21) 2206-6439",
+        "data_situacao": "10/12/2021",
+        "motivo_situacao": "Incorporação",
+        "cnpj": "33.014.556/0098-19",
+        "ultima_atualizacao": "2024-10-04T16:42:44.187Z",
+        "status": "OK",
+        "fantasia": "",
+        "complemento": "",
+        "efr": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "atividade_principal": [
+            {
+                "code": "00.00-0-00",
+                "text": "********"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "00.00-0-00",
+                "text": "Não informada"
+            }
+        ],
+        "capital_social": "0.00",
+        "qsa": [],
+        "simples": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-09-14T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-09-14T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "status": "ERROR",
+        "message": "CNPJ inválido"
+    },
+    {
+        "abertura": "01/08/2005",
+        "situacao": "ATIVA",
+        "tipo": "FILIAL",
+        "nome": "DRIFT COMERCIO DE ALIMENTOS S/A.",
+        "fantasia": "SUPERMERCADO CARONE",
+        "porte": "DEMAIS",
+        "natureza_juridica": "205-4 - Sociedade Anônima Fechada",
+        "atividade_principal": [
+            {
+                "code": "47.11-3-02",
+                "text": "Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - supermercados"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "47.21-1-02",
+                "text": "Padaria e confeitaria com predominância de revenda"
+            },
+            {
+                "code": "47.22-9-01",
+                "text": "Comércio varejista de carnes - açougues"
+            },
+            {
+                "code": "47.89-0-02",
+                "text": "Comércio varejista de plantas e flores naturais"
+            },
+            {
+                "code": "56.11-2-01",
+                "text": "Restaurantes e similares"
+            },
+            {
+                "code": "56.11-2-03",
+                "text": "Lanchonetes, casas de chá, de sucos e similares"
+            },
+            {
+                "code": "56.11-2-04",
+                "text": "Bares e outros estabelecimentos especializados em servir bebidas, sem entretenimento"
+            },
+            {
+                "code": "56.20-1-04",
+                "text": "Fornecimento de alimentos preparados preponderantemente para consumo domiciliar"
+            }
+        ],
+        "logradouro": "AVENIDA JUDITH LEAO CASTELLO RIBEIRO",
+        "numero": "250",
+        "municipio": "VITORIA",
+        "bairro": "JARDIM CAMBURI",
+        "uf": "ES",
+        "cep": "29.090-720",
+        "email": "controladoria@carone.com.br",
+        "telefone": "(27) 2125-1000 / (27) 3237-2727 / (27) 2125-1002",
+        "data_situacao": "01/08/2005",
+        "cnpj": "28.129.260/0009-38",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "complemento": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "9150000.00",
+        "qsa": [],
+        "simples": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "27/06/2000",
+        "situacao": "ATIVA",
+        "tipo": "FILIAL",
+        "nome": "DORI ALIMENTOS S.A.",
+        "fantasia": "DORI ALIMENTOS",
+        "porte": "DEMAIS",
+        "natureza_juridica": "205-4 - Sociedade Anônima Fechada",
+        "atividade_principal": [
+            {
+                "code": "46.37-1-07",
+                "text": "Comércio atacadista de chocolates, confeitos, balas, bombons e semelhantes"
+            }
+        ],
+        "logradouro": "AV RUI BARBOSA",
+        "numero": "5525",
+        "complemento": "GALPAOMODULO 15 SALA B",
+        "municipio": "SAO JOSE DOS PINHAIS",
+        "bairro": "AFONSO PENA",
+        "uf": "PR",
+        "cep": "83.045-350",
+        "email": "tributario@dori.com.br",
+        "telefone": "(14) 3408-3000/ (14) 3408-3016",
+        "data_situacao": "03/11/2005",
+        "cnpj": "52.123.916/0014-57",
+        "ultima_atualizacao": "2024-10-23T15:17:48.354Z",
+        "status": "OK",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "atividades_secundarias": [
+            {
+                "code": "00.00-0-00",
+                "text": "Não informada"
+            }
+        ],
+        "capital_social": "0.00",
+        "qsa": [],
+        "simples": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-09-14T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-09-14T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "06/04/2004",
+        "situacao": "BAIXADA",
+        "tipo": "FILIAL",
+        "nome": "PECCIN SA",
+        "porte": "DEMAIS",
+        "natureza_juridica": "205-4 - Sociedade Anônima Fechada",
+        "logradouro": "ESTRADA ESTADUAL RS 331",
+        "numero": "S/N",
+        "complemento": "LINHA 1-SECAO DOURADA",
+        "municipio": "ERECHIM",
+        "bairro": "DEMOLINER",
+        "uf": "RS",
+        "cep": "99.700-010",
+        "data_situacao": "10/02/2005",
+        "motivo_situacao": "EXTINÇÃO POR ENCERRAMENTO LIQUIDAÇÃO VOLUNTÁRIA",
+        "cnpj": "89.425.888/0005-41",
+        "ultima_atualizacao": "2024-09-14T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "email": "",
+        "telefone": "",
+        "efr": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "atividade_principal": [
+            {
+                "code": "00.00-0-00",
+                "text": "********"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "00.00-0-00",
+                "text": "Não informada"
+            }
+        ],
+        "capital_social": "92302995.00",
+        "qsa": [],
+        "simples": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-09-14T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-09-14T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    }
+]

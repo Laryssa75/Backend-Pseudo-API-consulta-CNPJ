@@ -19,12 +19,17 @@ def  ler_cnpjs_excel(entrada_excel):
     except FileNotFoundError:
         logging.error('Arquivo do excel de entrada não encontrado.')
 
+#O arquivo do excel com os cnjps que serão lidos, precisa estar no format especial CEP e em uma coluna apenas, sem traço e ponto.
+#Quando for rodar o código, nenhum arquivo dentro do diretório de onde está rodando o códido pode-se estar aberto, se não dá erro.
+#Recomendo que a cada saldo de consulta fazer uma pausa, para não perder o contador de 3 consultas por minuto.
+
+
 #Sua chave  de API da ReceitaWS
 api_key = '58d0b89c8477db6000a0ecc11e251280cdb060751bdeaf5ed297c16f4bf5d027'
 
 #Função para consultar um CNPJ na API ReceitaWS
 def consultar_cnpj(cnpj):
-    url = f'https://receitaws.com.br/account/cnpj{cnpj}'
+    url = f'https://receitaws.com.br/v1/cnpj/{cnpj}'
     headers = {'Authorization': f'Bearer {api_key}'}
     #response = requests.get(url, headers=headers)
 
@@ -70,7 +75,7 @@ def consultar_cnpj_massa(cnpjs):
         
         #Aguardando 1 minuto após consultar 3 CNPJs
         if i + 3 < len(cnpjs):
-            #print("Aguardando 1 minuto para a próxima consulta...")
+            print("Aguardando 1 minuto para a próxima consulta...")
             logging.info("Aguardando 1 minuto para a próxima consulta...")
             time.sleep(60)
 
@@ -97,12 +102,12 @@ def json_para_excel(arquivo_json, excel_saida):
 #Caminho das informações pelas funções
 
 #Caminho para o arquivo Excel com os CNPJs
-#arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler.xlsx'
+arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler.xlsx'
 
 
 #Lendo os CNPJs do arquivo Excel
-#cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)
-cnpjs = '33014556009819'
+cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)
+#cnpjs = '33014556009819'
 
 #Realizando as consultas e armazenamento os resultados
 resultados = consultar_cnpj_massa(cnpjs)
