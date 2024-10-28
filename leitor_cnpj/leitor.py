@@ -5,7 +5,8 @@ import pandas as pd
 import logging
 
 #Configuração do Log
-logging.basicConfig(filename='Verificação_arquivo_excel.log',
+logging.basicConfig(filename='Log_dasConsultas.log',
+                    filemode= 'w',
                     level= logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -13,16 +14,17 @@ logging.basicConfig(filename='Verificação_arquivo_excel.log',
 def  ler_cnpjs_excel(entrada_excel):
     try:
         df = pd.read_excel(entrada_excel)
-        cnpjs = df['CNPJ'].astype(str).tolist() # Convertendo a coluna 'CNPJ' em lista
+        cnpjs = df['CNPJ'].astype(str).str.replace(r'\D', '', regex=True).str.zfill(14).tolist() # Convertendo a coluna 'CNPJ' em lista
         return cnpjs
 
     except FileNotFoundError:
+        print("Arquivo do excel de entrada não encontrado.")
         logging.error('Arquivo do excel de entrada não encontrado.')
 
 #O arquivo do excel com os cnjps que serão lidos, precisa estar no format especial CEP e em uma coluna apenas, sem traço e ponto.
 #Quando for rodar o código, nenhum arquivo dentro do diretório de onde está rodando o códido pode-se estar aberto, se não dá erro.
 #Recomendo que a cada saldo de consulta fazer uma pausa, para não perder o contador de 3 consultas por minuto.
-
+#O nome da coluna do arquivo do excel que vai ter os cnpjs para consulta de ser escrito com letra maiúscula CNPJ, se não dá erro.
 
 #Sua chave  de API da ReceitaWS
 api_key = '58d0b89c8477db6000a0ecc11e251280cdb060751bdeaf5ed297c16f4bf5d027'
@@ -45,6 +47,7 @@ def consultar_cnpj(cnpj):
         if response.status_code == 200:
             return response.json()
         else:
+            print(f'Resposta não OK para cnpj {cnpj} : {response.status_code}')
             logging.warning(f"Resposta não OK para o CNPJ {cnpj}: {response.status_code}")
             return None
 
@@ -64,6 +67,8 @@ def consultar_cnpj(cnpj):
 
 def consultar_cnpj_massa(cnpjs):
     resultados = []
+    sucesso_contador = 0
+    erro_contador = 0
 
     for i in range(0, len(cnpjs), 3): #Processa 3 cnpjs por vez
         lote_cnpjs = cnpjs[i:i+3]
@@ -72,6 +77,17 @@ def consultar_cnpj_massa(cnpjs):
             resultado = consultar_cnpj(cnpj)
             if resultado:
                 resultados.append(resultado)
+                sucesso_contador += 1
+            else:
+                erro_contador += 1
+
+            #Log do status atual das consultas
+            logging.info(f"Consultas bem sucedidas: {sucesso_contador}")
+            logging.info(f"Consultas com erro: {erro_contador}")
+
+            #Mostrando no console status das consultas
+            print(f"Consultas bem sucedidas: {sucesso_contador}")
+            print(f"Consultas com erro: {erro_contador}")
         
         #Aguardando 1 minuto após consultar 3 CNPJs
         if i + 3 < len(cnpjs):
