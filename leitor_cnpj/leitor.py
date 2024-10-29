@@ -67,36 +67,48 @@ def salvar_parcial(resultados, arquivo_json, excel_saida):
             try:
                 resultados_existente = json.load(file)
                 #print(f" Leitura de json nas consultas parciais {resultados_existente}")
+                # Verifica se o conteúdo carregado é uma lista
+                if not isinstance(resultados_existente, list):
+                    resultados_existente = []
+                    logging.error('O conteúdo do JSON não é uma lista. Recriando o arquivo com lista vazia.')
 
             except json.JSONDecodeError:
                 print("Arquivo não encontrado.")
                 logging.error('Arquivo não encontrado.')    
                 resultados_existente = []
 
+    # Certifique-se de que 'resultados' é uma lista
+    if isinstance(resultados, dict):
+        resultados_existente.append(resultados)  # Adiciona um dicionário único
+    elif isinstance(resultados, list):  # Se resultados é uma lista de dicionários
+        resultados_existente.extend(resultados)  # Adiciona todos os itens da lista
     else:
-        resultados_existente = []
+        logging.error('Resultados não é um dicionário ou uma lista de dicionários.')
 
-    # Adiciona o novo resultado à lista existente
-    resultados_existente.append(resultados)
-    
     # Determina a ordem das colunas a partir do primeiro resultado
+    #colunas_padrao = []
     if resultados_existente:
-        colunas_padrao = list(resultados_existente[0].keys())
-    else:
-        colunas_padrao = []
+        if isinstance(resultados_existente[0], dict):
+            colunas_padrao = list(resultados_existente[0].keys())
+            print(f"resultados existentes {resultados_existente}")
+        else:
+            logging.error('O primeiro item em resultados_existente não é um dicionário.')
 
     # Garantir que todos os itens tenham todas as colunas, preenchendo com None
     resultados_padrozinados = []
     for item in resultados_existente:
         item_padronizado = {coluna: item.get(coluna, None) for coluna in colunas_padrao}
         resultados_padrozinados.append(item_padronizado)
+        print(f"resultado padronizado {resultados_padrozinados}")
 
     #salvando consulta parcial em excel
     with open(arquivo_json, 'w', encoding='utf-8') as file:
-        json.dump(resultados_existente, file, ensure_ascii=False, indent=4)
+        json.dump(resultados_padrozinados, file, ensure_ascii=False, indent=4)
+        print(f"salvando no json {resultados_padrozinados}")
         
-    df = pd.DataFrame(resultados_existente)
+    df = pd.DataFrame(resultados_padrozinados, columns=colunas_padrao)
     df.to_excel(excel_saida, index=False)
+    print(f"salvando no excel {resultados_padrozinados}")
 
 def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
     sucesso_contador = 0
@@ -113,6 +125,7 @@ def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
 
             resultado = consultar_cnpj(cnpj)
             cnpjs_processados.add(cnpj)  # Corrigido para adicionar o CNPJ correto
+            print(f"cnjps processados consulta em massa {cnpjs_processados}")
 
             if resultado:
                 sucesso_contador += 1
@@ -149,6 +162,7 @@ def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
     # Salva os CNPJs processados em JSON para consultas futuras
     with open('cnpjs_processados.json', 'w') as file:
         json.dump(list(cnpjs_processados), file)
+        print(f"cnpjs processados: {cnpjs_processados}")
 
     return resultados
 
