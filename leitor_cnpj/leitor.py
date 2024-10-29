@@ -1,8 +1,10 @@
+    
 import requests
 import time
 import json
 import pandas as pd
 import logging
+import os
 
 #Configuração do Log
 logging.basicConfig(filename='Log_dasConsultas.log',
@@ -43,7 +45,7 @@ def consultar_cnpj(cnpj):
         logging.info(f"Status da resposta para o CNPJ {cnpj}: {response.status_code}")
         logging.info(f"Conteúdo da resposta: {response.text}")
 
-         # Verifique se a resposta é válida antes de tentar transformá-la em JSON
+        # Verifique se a resposta é válida antes de tentar transformá-la em JSON
         if response.status_code == 200:
             return response.json()
         else:
@@ -56,46 +58,100 @@ def consultar_cnpj(cnpj):
         logging.error(f"Erro ao consultar o CNPJ {cnpj}: {e}")
         return None
 
-    # if response.status_code == 200:
-    #     return response.json() #Retorna os dados em JSON se a requisição for bem sucedida
-    # else:
-    #     print(f'Erro ao consultar CNPJ {cnpj}: {response.status_code} - {response.text}')
+def salvar_parcial(resultados, arquivo_json, excel_saida):
+    resultados_existente = []
 
-    #     print(f'Status Code: {response.status_code}')
-    #     print(f'Response Text: {response.text}')
-    #     return None  
+    #salvado consulta parcial em json
+    if os.path.exists(arquivo_json) and os.path.getsize(arquivo_json) > 0:
+        with open(arquivo_json, 'r', encoding='utf-8') as file:
+            try:
+                resultados_existente = json.load(file)
+                #print(f" Leitura de json nas consultas parciais {resultados_existente}")
 
-def consultar_cnpj_massa(cnpjs):
-    resultados = []
+            except json.JSONDecodeError:
+                print("Arquivo não encontrado.")
+                logging.error('Arquivo não encontrado.')    
+                resultados_existente = []
+
+    else:
+        resultados_existente = []
+
+    # Adiciona o novo resultado à lista existente
+    resultados_existente.append(resultados)
+    
+    # Determina a ordem das colunas a partir do primeiro resultado
+    if resultados_existente:
+        colunas_padrao = list(resultados_existente[0].keys())
+    else:
+        colunas_padrao = []
+
+    # Garantir que todos os itens tenham todas as colunas, preenchendo com None
+    resultados_padrozinados = []
+    for item in resultados_existente:
+        item_padronizado = {coluna: item.get(coluna, None) for coluna in colunas_padrao}
+        resultados_padrozinados.append(item_padronizado)
+
+    #salvando consulta parcial em excel
+    with open(arquivo_json, 'w', encoding='utf-8') as file:
+        json.dump(resultados_existente, file, ensure_ascii=False, indent=4)
+        
+    df = pd.DataFrame(resultados_existente)
+    df.to_excel(excel_saida, index=False)
+
+def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
     sucesso_contador = 0
     erro_contador = 0
+    cnpjs_processados = set()
+    resultados = []
 
-    for i in range(0, len(cnpjs), 3): #Processa 3 cnpjs por vez
+    for i in range(0, len(cnpjs), 3):  # Processa 3 CNPJs por vez
         lote_cnpjs = cnpjs[i:i+3]
 
         for cnpj in lote_cnpjs:
+            if cnpj in cnpjs_processados:
+                continue
+
             resultado = consultar_cnpj(cnpj)
+            cnpjs_processados.add(cnpj)  # Corrigido para adicionar o CNPJ correto
+
             if resultado:
-                resultados.append(resultado)
                 sucesso_contador += 1
+                resultados.append(resultado)  # Adiciona o resultado à lista
+
+                # Salva o resultado parcial
+                salvar_parcial(resultados, arquivo_json, excel_saida)  # Passa uma lista de um item
+
             else:
                 erro_contador += 1
 
-            #Log do status atual das consultas
+            # Log do status atual das consultas
             logging.info(f"Consultas bem sucedidas: {sucesso_contador}")
             logging.info(f"Consultas com erro: {erro_contador}")
 
-            #Mostrando no console status das consultas
+            # Mostrando no console o status das consultas
             print(f"Consultas bem sucedidas: {sucesso_contador}")
             print(f"Consultas com erro: {erro_contador}")
-        
-        #Aguardando 1 minuto após consultar 3 CNPJs
-        if i + 3 < len(cnpjs):
+
+        # Aguardando 1 minuto após consultar 3 CNPJs
+        if (i + 3) <= len(cnpjs):
             print("Aguardando 1 minuto para a próxima consulta...")
             logging.info("Aguardando 1 minuto para a próxima consulta...")
             time.sleep(60)
 
+        # if sucesso_contador % 1000 and sucesso_contador> 0:
+        #    print("Foi executado 1000 consultas, vamos para o próximo bloco de consultas...")
+        # #criar um novo nome para o arquivo de salvamento #     #     excel_saida = f"{excel_saida}_{sucesso_contador // 1000}.xlsx"
+        # salvar_resultados_json(resultados, arquivo_json, excel_saida)
+        # print(f"O resultado foi salvo em {excel_saida}")
+        # logging.info(resultados)
+        # resultados.clear()#limpa a lista de novas consultas
+
+    # Salva os CNPJs processados em JSON para consultas futuras
+    with open('cnpjs_processados.json', 'w') as file:
+        json.dump(list(cnpjs_processados), file)
+
     return resultados
+
 
 #Salvando os resultados em JSON
 def salvar_resultados_json(resultados, arquivo_json):
@@ -119,23 +175,20 @@ def json_para_excel(arquivo_json, excel_saida):
 
 #Caminho para o arquivo Excel com os CNPJs
 arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler.xlsx'
-
+arquivo_json_resultados = 'resultados_cnpj_j.json'
+arquivo_excel_resultados = 'resultados_cnpj_e.xlsx'
 
 #Lendo os CNPJs do arquivo Excel
 cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)
 #cnpjs = '33014556009819'
 
 #Realizando as consultas e armazenamento os resultados
-resultados = consultar_cnpj_massa(cnpjs)
-
-#Caminho para salvar o arquivo JSON
-arquivo_json_resultados = 'resultados_cnpj_j.json'
+resultados = consultar_cnpj_massa(cnpjs, arquivo_json_resultados, arquivo_excel_resultados)
 
 #Salvando os resultados em JSON
 salvar_resultados_json(resultados, arquivo_json_resultados)
 
 #Convertendo o arquivo JSON para Excel saída
-arquivo_excel_resultados = 'resultados_cnpj_e.xlsx'
 json_para_excel(arquivo_json_resultados, arquivo_excel_resultados)
 
 print(f'Resultados salvos em: {arquivo_excel_resultados}')
