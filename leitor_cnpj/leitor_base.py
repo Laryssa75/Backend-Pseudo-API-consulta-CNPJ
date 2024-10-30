@@ -58,57 +58,57 @@ def consultar_cnpj(cnpj):
         logging.error(f"Erro ao consultar o CNPJ {cnpj}: {e}")
         return None
 
-def salvar_parcial(resultados, arquivo_json, excel_saida):
-    resultados_existente = []
+# def salvar_parcial(resultados, arquivo_json, excel_saida):
+#     resultados_existente = []
 
-    #salvado consulta parcial em json
-    if os.path.exists(arquivo_json) and os.path.getsize(arquivo_json) > 0:
-        with open(arquivo_json, 'r', encoding='utf-8') as file:
-            try:
-                resultados_existente = json.load(file)
-                #print(f" Leitura de json nas consultas parciais {resultados_existente}")
-                # Verifica se o conteúdo carregado é uma lista
-                if not isinstance(resultados_existente, list):
-                    resultados_existente = []
-                    logging.error('O conteúdo do JSON não é uma lista. Recriando o arquivo com lista vazia.')
+#     #salvado consulta parcial em json
+#     if os.path.exists(arquivo_json) and os.path.getsize(arquivo_json) > 0:
+#         with open(arquivo_json, 'r', encoding='utf-8') as file:
+#             try:
+#                 resultados_existente = json.load(file)
+#                 #print(f" Leitura de json nas consultas parciais {resultados_existente}")
+#                 # Verifica se o conteúdo carregado é uma lista
+#                 if not isinstance(resultados_existente, list):
+#                     resultados_existente = []
+#                     logging.error('O conteúdo do JSON não é uma lista. Recriando o arquivo com lista vazia.')
 
-            except json.JSONDecodeError:
-                print("Arquivo não encontrado.")
-                logging.error('Arquivo não encontrado.')    
-                resultados_existente = []
+#             except json.JSONDecodeError:
+#                 print("Arquivo não encontrado.")
+#                 logging.error('Arquivo não encontrado.')    
+#                 resultados_existente = []
 
-    # Certifique-se de que 'resultados' é uma lista
-    if isinstance(resultados, dict):
-        resultados_existente.append(resultados)  # Adiciona um dicionário único
-    elif isinstance(resultados, list):  # Se resultados é uma lista de dicionários
-        resultados_existente.extend(resultados)  # Adiciona todos os itens da lista
-    else:
-        logging.error('Resultados não é um dicionário ou uma lista de dicionários.')
+#     # Certifique-se de que 'resultados' é uma lista
+#     if isinstance(resultados, dict):
+#         resultados_existente.append(resultados)  # Adiciona um dicionário único
+#     elif isinstance(resultados, list):  # Se resultados é uma lista de dicionários
+#         resultados_existente.extend(resultados)  # Adiciona todos os itens da lista
+#     else:
+#         logging.error('Resultados não é um dicionário ou uma lista de dicionários.')
 
-    # Determina a ordem das colunas a partir do primeiro resultado
-    #colunas_padrao = []
-    if resultados_existente:
-        if isinstance(resultados_existente[0], dict):
-            colunas_padrao = list(resultados_existente[0].keys())
-            print(f"resultados existentes {resultados_existente}")
-        else:
-            logging.error('O primeiro item em resultados_existente não é um dicionário.')
+#     # Determina a ordem das colunas a partir do primeiro resultado
+#     #colunas_padrao = []
+#     if resultados_existente:
+#         if isinstance(resultados_existente[0], dict):
+#             colunas_padrao = list(resultados_existente[0].keys())
+#             print(f"resultados existentes {resultados_existente}")
+#         else:
+#             logging.error('O primeiro item em resultados_existente não é um dicionário.')
 
-    # Garantir que todos os itens tenham todas as colunas, preenchendo com None
-    resultados_padrozinados = []
-    for item in resultados_existente:
-        item_padronizado = {coluna: item.get(coluna, None) for coluna in colunas_padrao}
-        resultados_padrozinados.append(item_padronizado)
-        print(f"resultado padronizado {resultados_padrozinados}")
+#     # Garantir que todos os itens tenham todas as colunas, preenchendo com None
+#     resultados_padrozinados = []
+#     for item in resultados_existente:
+#         item_padronizado = {coluna: item.get(coluna, None) for coluna in colunas_padrao}
+#         resultados_padrozinados.append(item_padronizado)
+#         print(f"resultado padronizado {resultados_padrozinados}")
 
-    #salvando consulta parcial em excel
-    with open(arquivo_json, 'w', encoding='utf-8') as file:
-        json.dump(resultados_padrozinados, file, ensure_ascii=False, indent=4)
-        print(f"salvando no json {resultados_padrozinados}")
+#     #salvando consulta parcial em excel
+#     with open(arquivo_json, 'w', encoding='utf-8') as file:
+#         json.dump(resultados_padrozinados, file, ensure_ascii=False, indent=4)
+#         print(f"salvando no json {resultados_padrozinados}")
         
-    df = pd.DataFrame(resultados_padrozinados, columns=colunas_padrao)
-    df.to_excel(excel_saida, index=False)
-    print(f"salvando no excel {resultados_padrozinados}")
+#     df = pd.DataFrame(resultados_padrozinados, columns=colunas_padrao)
+#     df.to_excel(excel_saida, index=False)
+#     print(f"salvando no excel {resultados_padrozinados}")
 
 def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
     sucesso_contador = 0
@@ -125,14 +125,14 @@ def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
 
             resultado = consultar_cnpj(cnpj)
             cnpjs_processados.add(cnpj)  # Corrigido para adicionar o CNPJ correto
-            print(f"cnjps processados consulta em massa {cnpjs_processados}")
+            logging.info(f"cnjps processados consulta em massa {cnpjs_processados}")
 
             if resultado:
                 sucesso_contador += 1
                 resultados.append(resultado)  # Adiciona o resultado à lista
 
                 # Salva o resultado parcial
-                salvar_parcial(resultados, arquivo_json, excel_saida)  # Passa uma lista de um item
+                #salvar_parcial(resultados, arquivo_json, excel_saida)  # Passa uma lista de um item
 
             else:
                 erro_contador += 1
@@ -151,18 +151,10 @@ def consultar_cnpj_massa(cnpjs, arquivo_json, excel_saida):
             logging.info("Aguardando 1 minuto para a próxima consulta...")
             time.sleep(60)
 
-        # if sucesso_contador % 1000 and sucesso_contador> 0:
-        #    print("Foi executado 1000 consultas, vamos para o próximo bloco de consultas...")
-        # #criar um novo nome para o arquivo de salvamento #     #     excel_saida = f"{excel_saida}_{sucesso_contador // 1000}.xlsx"
-        # salvar_resultados_json(resultados, arquivo_json, excel_saida)
-        # print(f"O resultado foi salvo em {excel_saida}")
-        # logging.info(resultados)
-        # resultados.clear()#limpa a lista de novas consultas
-
     # Salva os CNPJs processados em JSON para consultas futuras
     with open('cnpjs_processados.json', 'w') as file:
         json.dump(list(cnpjs_processados), file)
-        print(f"cnpjs processados: {cnpjs_processados}")
+        logging.info(f"cnpjs processados: {cnpjs_processados}")
 
     return resultados
 
@@ -188,9 +180,9 @@ def json_para_excel(arquivo_json, excel_saida):
 #Caminho das informações pelas funções
 
 #Caminho para o arquivo Excel com os CNPJs
-arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler.xlsx'
-arquivo_json_resultados = 'resultados_cnpj_teste.json'
-arquivo_excel_resultados = 'resultados_cnpj_teste.xlsx'
+arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler_bloco1.xlsx'
+arquivo_json_resultados = 'resultados_cnpj_bloco1.json'
+arquivo_excel_resultados = 'resultados_cnpj_bloco1.xlsx'
 
 #Lendo os CNPJs do arquivo Excel
 cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)

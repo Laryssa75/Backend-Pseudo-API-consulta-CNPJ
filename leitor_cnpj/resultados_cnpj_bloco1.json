@@ -1,0 +1,936 @@
+[
+    {
+        "abertura": "01/07/2011",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "ILHA EMPREENDIMENTOS E SERVICOS LTDA",
+        "fantasia": "ILHA CONSTRUTORA E INCORPORADORA",
+        "porte": "DEMAIS",
+        "natureza_juridica": "206-2 - Sociedade Empresária Limitada",
+        "atividade_principal": [
+            {
+                "code": "41.20-4-00",
+                "text": "Construção de edifícios"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "23.30-3-01",
+                "text": "Fabricação de estruturas pré-moldadas de concreto armado, em série e sob encomenda"
+            },
+            {
+                "code": "23.30-3-02",
+                "text": "Fabricação de artefatos de cimento para uso na construção"
+            },
+            {
+                "code": "23.30-3-05",
+                "text": "Preparação de massa de concreto e argamassa para construção"
+            },
+            {
+                "code": "25.11-0-00",
+                "text": "Fabricação de estruturas metálicas"
+            },
+            {
+                "code": "25.12-8-00",
+                "text": "Fabricação de esquadrias de metal"
+            },
+            {
+                "code": "37.02-9-00",
+                "text": "Atividades relacionadas a esgoto, exceto a gestão de redes"
+            },
+            {
+                "code": "41.10-7-00",
+                "text": "Incorporação de empreendimentos imobiliários"
+            },
+            {
+                "code": "42.11-1-01",
+                "text": "Construção de rodovias e ferrovias"
+            },
+            {
+                "code": "42.11-1-02",
+                "text": "Pintura para sinalização em pistas rodoviárias e aeroportos"
+            },
+            {
+                "code": "42.12-0-00",
+                "text": "Construção de obras-de-arte especiais"
+            },
+            {
+                "code": "42.13-8-00",
+                "text": "Obras de urbanização - ruas, praças e calçadas"
+            },
+            {
+                "code": "42.21-9-01",
+                "text": "Construção de barragens e represas para geração de energia elétrica"
+            },
+            {
+                "code": "42.21-9-02",
+                "text": "Construção de estações e redes de distribuição de energia elétrica"
+            },
+            {
+                "code": "42.21-9-03",
+                "text": "Manutenção de redes de distribuição de energia elétrica"
+            },
+            {
+                "code": "42.22-7-01",
+                "text": "Construção de redes de abastecimento de água, coleta de esgoto e construções correlatas, exceto obras de irrigação"
+            },
+            {
+                "code": "42.22-7-02",
+                "text": "Obras de irrigação"
+            },
+            {
+                "code": "42.23-5-00",
+                "text": "Construção de redes de transportes por dutos, exceto para água e esgoto"
+            },
+            {
+                "code": "42.99-5-01",
+                "text": "Construção de instalações esportivas e recreativas"
+            },
+            {
+                "code": "43.11-8-01",
+                "text": "Demolição de edifícios e outras estruturas"
+            },
+            {
+                "code": "43.11-8-02",
+                "text": "Preparação de canteiro e limpeza de terreno"
+            },
+            {
+                "code": "43.12-6-00",
+                "text": "Perfurações e sondagens"
+            },
+            {
+                "code": "43.13-4-00",
+                "text": "Obras de terraplenagem"
+            },
+            {
+                "code": "43.19-3-00",
+                "text": "Serviços de preparação do terreno não especificados anteriormente"
+            },
+            {
+                "code": "43.21-5-00",
+                "text": "Instalações elétricas"
+            },
+            {
+                "code": "43.22-3-01",
+                "text": "Instalações hidráulicas, sanitárias e de gás"
+            },
+            {
+                "code": "43.22-3-02",
+                "text": "Instalação e manutenção de sistemas centrais de ar condicionado, de ventilação e refrigeração"
+            },
+            {
+                "code": "43.22-3-03",
+                "text": "Instalações de sistema de prevenção contra incêndio"
+            },
+            {
+                "code": "43.29-1-04",
+                "text": "Montagem e instalação de sistemas e equipamentos de iluminação e sinalização em vias públicas, portos e aeroportos"
+            },
+            {
+                "code": "43.30-4-02",
+                "text": "Instalação de portas, janelas, tetos, divisórias e armários embutidos de qualquer material"
+            },
+            {
+                "code": "43.30-4-03",
+                "text": "Obras de acabamento em gesso e estuque"
+            },
+            {
+                "code": "43.30-4-04",
+                "text": "Serviços de pintura de edifícios em geral"
+            },
+            {
+                "code": "43.30-4-05",
+                "text": "Aplicação de revestimentos e de resinas em interiores e exteriores"
+            },
+            {
+                "code": "43.30-4-99",
+                "text": "Outras obras de acabamento da construção"
+            },
+            {
+                "code": "43.91-6-00",
+                "text": "Obras de fundações"
+            },
+            {
+                "code": "43.99-1-03",
+                "text": "Obras de alvenaria"
+            },
+            {
+                "code": "43.99-1-05",
+                "text": "Perfuração e construção de poços de água"
+            },
+            {
+                "code": "49.23-0-02",
+                "text": "Serviço de transporte de passageiros - locação de automóveis com motorista"
+            },
+            {
+                "code": "49.30-2-01",
+                "text": "Transporte rodoviário de carga, exceto produtos perigosos e mudanças, municipal"
+            },
+            {
+                "code": "68.10-2-01",
+                "text": "Compra e venda de imóveis próprios"
+            },
+            {
+                "code": "68.10-2-03",
+                "text": "Loteamento de imóveis próprios"
+            },
+            {
+                "code": "68.21-8-01",
+                "text": "Corretagem na compra e venda e avaliação de imóveis"
+            },
+            {
+                "code": "77.19-5-99",
+                "text": "Locação de outros meios de transporte não especificados anteriormente, sem condutor"
+            },
+            {
+                "code": "81.30-3-00",
+                "text": "Atividades paisagísticas"
+            },
+            {
+                "code": "82.99-7-99",
+                "text": "Outras atividades de serviços prestados principalmente às empresas não especificadas anteriormente"
+            }
+        ],
+        "qsa": [
+            {
+                "nome": "JOSE AGENOR DOS SANTOS COSTA",
+                "qual": "49-Sócio-Administrador"
+            },
+            {
+                "nome": "LUCAS ANTONIO BRANDAO",
+                "qual": "49-Sócio-Administrador"
+            }
+        ],
+        "logradouro": "AVENIDA IGNACIO LAMAS",
+        "numero": "570",
+        "complemento": "PAVMTO2 SALA 01",
+        "municipio": "AFONSO CLAUDIO",
+        "bairro": "GRAMA",
+        "uf": "ES",
+        "cep": "29.600-000",
+        "email": "contato@ilhaes.com",
+        "telefone": "(27) 3735-1438",
+        "data_situacao": "01/07/2011",
+        "cnpj": "14.209.372/0001-37",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "2412869.00",
+        "simples": {
+            "optante": false,
+            "data_opcao": "01/01/2012",
+            "data_exclusao": "31/07/2013",
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "22/11/2006",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "A J COSMETICOS LTDA",
+        "porte": "EMPRESA DE PEQUENO PORTE",
+        "natureza_juridica": "206-2 - Sociedade Empresária Limitada",
+        "atividade_principal": [
+            {
+                "code": "20.63-1-00",
+                "text": "Fabricação de cosméticos, produtos de perfumaria e de higiene pessoal"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "17.33-8-00",
+                "text": "Fabricação de chapas e de embalagens de papelão ondulado"
+            },
+            {
+                "code": "18.13-0-01",
+                "text": "Impressão de material para uso publicitário"
+            },
+            {
+                "code": "18.13-0-99",
+                "text": "Impressão de material para outros usos"
+            },
+            {
+                "code": "20.52-5-00",
+                "text": "Fabricação de desinfestantes domissanitários"
+            },
+            {
+                "code": "46.46-0-01",
+                "text": "Comércio atacadista de cosméticos e produtos de perfumaria"
+            },
+            {
+                "code": "47.13-0-02",
+                "text": "Lojas de variedades, exceto lojas de departamentos ou magazines"
+            },
+            {
+                "code": "47.72-5-00",
+                "text": "Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal"
+            },
+            {
+                "code": "47.89-0-05",
+                "text": "Comércio varejista de produtos saneantes domissanitários"
+            },
+            {
+                "code": "58.29-8-00",
+                "text": "Edição integrada à impressão de cadastros, listas e outros produtos gráficos"
+            },
+            {
+                "code": "68.10-2-02",
+                "text": "Aluguel de imóveis próprios"
+            },
+            {
+                "code": "71.20-1-00",
+                "text": "Testes e análises técnicas"
+            },
+            {
+                "code": "73.19-0-03",
+                "text": "Marketing direto"
+            },
+            {
+                "code": "82.92-0-00",
+                "text": "Envasamento e empacotamento sob contrato"
+            }
+        ],
+        "qsa": [
+            {
+                "nome": "ALINE BARCELOS COUTINHO MOREIRA",
+                "qual": "49-Sócio-Administrador"
+            }
+        ],
+        "logradouro": "RUA MARIA FRANCISCA SIMAO",
+        "numero": "12",
+        "complemento": "GALPAO.",
+        "municipio": "AFONSO CLAUDIO",
+        "bairro": "GRAMA",
+        "uf": "ES",
+        "cep": "29.600-000",
+        "email": "contato@trizzi.com.br",
+        "telefone": "(27) 3735-2324 / (27) 9790-2324",
+        "data_situacao": "22/11/2006",
+        "cnpj": "08.482.724/0001-20",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "490000.00",
+        "simples": {
+            "optante": false,
+            "data_opcao": "01/01/2008",
+            "data_exclusao": "31/12/2020",
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "10/09/2008",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "MERCEARIA DIMAS LTDA",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "206-2 - Sociedade Empresária Limitada",
+        "atividade_principal": [
+            {
+                "code": "47.11-3-02",
+                "text": "Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - supermercados"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "46.39-7-01",
+                "text": "Comércio atacadista de produtos alimentícios em geral"
+            }
+        ],
+        "qsa": [
+            {
+                "nome": "ADMAR PILON",
+                "qual": "49-Sócio-Administrador"
+            }
+        ],
+        "logradouro": "RUA DARCI FERREIRA TELLES",
+        "numero": "178",
+        "complemento": "TERREOCOMERCIO",
+        "municipio": "AFONSO CLAUDIO",
+        "bairro": "SAO VICENTE",
+        "uf": "ES",
+        "cep": "29.600-000",
+        "email": "financeiro@centraldecompras.com.br",
+        "telefone": "(27) 3735-1900 / (27) 3735-1900",
+        "data_situacao": "28/11/2022",
+        "cnpj": "10.343.506/0001-57",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "60000.00",
+        "simples": {
+            "optante": false,
+            "data_opcao": "10/09/2008",
+            "data_exclusao": "31/12/2011",
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "15/09/2014",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "FARMACIA SAO VICENTE LTDA",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "206-2 - Sociedade Empresária Limitada",
+        "atividade_principal": [
+            {
+                "code": "47.71-7-01",
+                "text": "Comércio varejista de produtos farmacêuticos, sem manipulação de fórmulas"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "47.73-3-00",
+                "text": "Comércio varejista de artigos médicos e ortopédicos"
+            },
+            {
+                "code": "47.72-5-00",
+                "text": "Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal"
+            },
+            {
+                "code": "47.29-6-99",
+                "text": "Comércio varejista de produtos alimentícios em geral ou especializado em produtos alimentícios não especificados anteriormente"
+            },
+            {
+                "code": "47.71-7-02",
+                "text": "Comércio varejista de produtos farmacêuticos, com manipulação de fórmulas"
+            },
+            {
+                "code": "47.71-7-03",
+                "text": "Comércio varejista de produtos farmacêuticos homeopáticos"
+            },
+            {
+                "code": "47.89-0-01",
+                "text": "Comércio varejista de suvenires, bijuterias e artesanatos"
+            },
+            {
+                "code": "66.19-3-02",
+                "text": "Correspondentes de instituições financeiras"
+            }
+        ],
+        "qsa": [
+            {
+                "nome": "ARESSA ZANOTTI MENDES FRANCO",
+                "qual": "49-Sócio-Administrador"
+            }
+        ],
+        "logradouro": "RUA FELICIO PEREIRA DE SOUZA",
+        "numero": "361",
+        "complemento": "TERREOTERREO",
+        "municipio": "AFONSO CLAUDIO",
+        "bairro": "SAO VICENTE",
+        "uf": "ES",
+        "cep": "29.600-000",
+        "email": "contabilmendonca@bsline.com.br",
+        "telefone": "(27) 3735-2606",
+        "data_situacao": "15/09/2014",
+        "cnpj": "21.058.180/0001-32",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "100000.00",
+        "simples": {
+            "optante": true,
+            "data_opcao": "15/09/2014",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "15/03/2017",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "VANIMAR AUGUSTO LOPES",
+        "fantasia": "MERCEARIA NOVO AMANHECER",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "213-5 - Empresário (Individual)",
+        "atividade_principal": [
+            {
+                "code": "47.12-1-00",
+                "text": "Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - minimercados, mercearias e armazéns"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "47.21-1-02",
+                "text": "Padaria e confeitaria com predominância de revenda"
+            },
+            {
+                "code": "47.22-9-01",
+                "text": "Comércio varejista de carnes - açougues"
+            },
+            {
+                "code": "47.23-7-00",
+                "text": "Comércio varejista de bebidas"
+            },
+            {
+                "code": "47.24-5-00",
+                "text": "Comércio varejista de hortifrutigranjeiros"
+            },
+            {
+                "code": "47.41-5-00",
+                "text": "Comércio varejista de tintas e materiais para pintura"
+            },
+            {
+                "code": "47.42-3-00",
+                "text": "Comércio varejista de material elétrico"
+            },
+            {
+                "code": "47.44-0-01",
+                "text": "Comércio varejista de ferragens e ferramentas"
+            },
+            {
+                "code": "47.44-0-99",
+                "text": "Comércio varejista de materiais de construção em geral"
+            },
+            {
+                "code": "47.51-2-01",
+                "text": "Comércio varejista especializado de equipamentos e suprimentos de informática"
+            },
+            {
+                "code": "47.53-9-00",
+                "text": "Comércio varejista especializado de eletrodomésticos e equipamentos de áudio e vídeo"
+            },
+            {
+                "code": "47.55-5-02",
+                "text": "Comercio varejista de artigos de armarinho"
+            },
+            {
+                "code": "47.55-5-03",
+                "text": "Comercio varejista de artigos de cama, mesa e banho"
+            },
+            {
+                "code": "47.59-8-99",
+                "text": "Comércio varejista de outros artigos de uso doméstico não especificados anteriormente"
+            },
+            {
+                "code": "47.61-0-03",
+                "text": "Comércio varejista de artigos de papelaria"
+            },
+            {
+                "code": "47.63-6-01",
+                "text": "Comércio varejista de brinquedos e artigos recreativos"
+            },
+            {
+                "code": "47.72-5-00",
+                "text": "Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal"
+            },
+            {
+                "code": "47.81-4-00",
+                "text": "Comércio varejista de artigos do vestuário e acessórios"
+            },
+            {
+                "code": "47.82-2-01",
+                "text": "Comércio varejista de calçados"
+            },
+            {
+                "code": "47.89-0-04",
+                "text": "Comércio varejista de animais vivos e de artigos e alimentos para animais de estimação"
+            },
+            {
+                "code": "47.89-0-99",
+                "text": "Comércio varejista de outros produtos não especificados anteriormente"
+            },
+            {
+                "code": "66.19-3-02",
+                "text": "Correspondentes de instituições financeiras"
+            }
+        ],
+        "logradouro": "RUA ISRAEL CUSTODIO DE SOUZA",
+        "numero": "531",
+        "municipio": "AGUA DOCE DO NORTE",
+        "bairro": "BOM DESTINO",
+        "uf": "ES",
+        "cep": "29.822-000",
+        "email": "vanimaraugustols@gmail.com",
+        "telefone": "(27) 9973-1406",
+        "data_situacao": "15/03/2017",
+        "cnpj": "27.309.093/0001-97",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "complemento": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "50000.00",
+        "qsa": [],
+        "simples": {
+            "optante": true,
+            "data_opcao": "15/03/2017",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "11/04/1989",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "GUMERCINDO BARROSO FILHO",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "213-5 - Empresário (Individual)",
+        "atividade_principal": [
+            {
+                "code": "56.11-2-04",
+                "text": "Bares e outros estabelecimentos especializados em servir bebidas, sem entretenimento"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "47.23-7-00",
+                "text": "Comércio varejista de bebidas"
+            },
+            {
+                "code": "47.21-1-04",
+                "text": "Comércio varejista de doces, balas, bombons e semelhantes"
+            },
+            {
+                "code": "47.12-1-00",
+                "text": "Comércio varejista de mercadorias em geral, com predominância de produtos alimentícios - minimercados, mercearias e armazéns"
+            },
+            {
+                "code": "47.29-6-99",
+                "text": "Comércio varejista de produtos alimentícios em geral ou especializado em produtos alimentícios não especificados anteriormente"
+            },
+            {
+                "code": "56.11-2-03",
+                "text": "Lanchonetes, casas de chá, de sucos e similares"
+            }
+        ],
+        "logradouro": "AVENIDA SEBASTIAO COELHO DE SOUZA",
+        "numero": "431",
+        "municipio": "AGUA DOCE DO NORTE",
+        "bairro": "CENTRO",
+        "uf": "ES",
+        "cep": "29.820-000",
+        "telefone": "(27) 3759-1128",
+        "data_situacao": "03/11/2005",
+        "cnpj": "31.823.016/0001-28",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "complemento": "",
+        "email": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "15000.00",
+        "qsa": [],
+        "simples": {
+            "optante": true,
+            "data_opcao": "01/07/2007",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": true,
+            "data_opcao": "01/01/2017",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "06/04/2010",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "DROGARIA SOUZA GARCIA LTDA",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "206-2 - Sociedade Empresária Limitada",
+        "atividade_principal": [
+            {
+                "code": "47.71-7-01",
+                "text": "Comércio varejista de produtos farmacêuticos, sem manipulação de fórmulas"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "47.82-2-01",
+                "text": "Comércio varejista de calçados"
+            },
+            {
+                "code": "47.72-5-00",
+                "text": "Comércio varejista de cosméticos, produtos de perfumaria e de higiene pessoal"
+            },
+            {
+                "code": "47.21-1-04",
+                "text": "Comércio varejista de doces, balas, bombons e semelhantes"
+            },
+            {
+                "code": "47.89-0-99",
+                "text": "Comércio varejista de outros produtos não especificados anteriormente"
+            },
+            {
+                "code": "47.29-6-99",
+                "text": "Comércio varejista de produtos alimentícios em geral ou especializado em produtos alimentícios não especificados anteriormente"
+            },
+            {
+                "code": "47.89-0-01",
+                "text": "Comércio varejista de suvenires, bijuterias e artesanatos"
+            },
+            {
+                "code": "66.19-3-02",
+                "text": "Correspondentes de instituições financeiras"
+            }
+        ],
+        "qsa": [
+            {
+                "nome": "ELSON VIEIRA DE SOUZA",
+                "qual": "49-Sócio-Administrador"
+            },
+            {
+                "nome": "LARIELY ANDRADE GARCIA",
+                "qual": "22-Sócio"
+            }
+        ],
+        "logradouro": "AVENIDA SEBASTIAO COELHO DE SOUZA",
+        "numero": "426",
+        "municipio": "AGUA DOCE DO NORTE",
+        "bairro": "CENTRO",
+        "uf": "ES",
+        "cep": "29.820-000",
+        "email": "farmaciadoelson@hotmail.com",
+        "telefone": "(27) 3759-1111",
+        "data_situacao": "06/04/2010",
+        "cnpj": "11.833.509/0001-31",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "complemento": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "30000.00",
+        "simples": {
+            "optante": true,
+            "data_opcao": "06/04/2010",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": false,
+            "data_opcao": null,
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "13/09/2010",
+        "situacao": "ATIVA",
+        "tipo": "MATRIZ",
+        "nome": "12.516.750 MARKELES SANTANA PEREIRA MIRANDA",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "213-5 - Empresário (Individual)",
+        "atividade_principal": [
+            {
+                "code": "47.21-1-02",
+                "text": "Padaria e confeitaria com predominância de revenda"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "56.20-1-04",
+                "text": "Fornecimento de alimentos preparados preponderantemente para consumo domiciliar"
+            },
+            {
+                "code": "47.89-0-99",
+                "text": "Comércio varejista de outros produtos não especificados anteriormente"
+            },
+            {
+                "code": "47.23-7-00",
+                "text": "Comércio varejista de bebidas"
+            },
+            {
+                "code": "47.29-6-99",
+                "text": "Comércio varejista de produtos alimentícios em geral ou especializado em produtos alimentícios não especificados anteriormente"
+            },
+            {
+                "code": "10.91-1-02",
+                "text": "Fabricação de produtos de padaria e confeitaria com predominância de produção própria"
+            },
+            {
+                "code": "56.11-2-03",
+                "text": "Lanchonetes, casas de chá, de sucos e similares"
+            },
+            {
+                "code": "10.91-1-01",
+                "text": "Fabricação de produtos de panificação industrial"
+            }
+        ],
+        "logradouro": "10A AVENIDA AVENIDA SEBASTIAO COELHO DE SOUZA",
+        "numero": "290",
+        "municipio": "AGUA DOCE DO NORTE",
+        "bairro": "CENTRO",
+        "uf": "ES",
+        "cep": "29.820-000",
+        "email": "markellyssantanna@outlook.com",
+        "telefone": "(27) 9661-8497",
+        "data_situacao": "13/09/2010",
+        "cnpj": "12.516.750/0001-08",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "complemento": "",
+        "efr": "",
+        "motivo_situacao": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "capital_social": "15000.00",
+        "qsa": [],
+        "simples": {
+            "optante": true,
+            "data_opcao": "13/09/2010",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": true,
+            "data_opcao": "01/01/2015",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    },
+    {
+        "abertura": "14/12/2011",
+        "situacao": "INAPTA",
+        "tipo": "MATRIZ",
+        "nome": "PEDRO PAULO CERQUEIRA DE ALMEIDA 52684040753",
+        "porte": "MICRO EMPRESA",
+        "natureza_juridica": "213-5 - Empresário (Individual)",
+        "logradouro": "RUA Iraci Marques",
+        "numero": "16",
+        "complemento": "CASA",
+        "municipio": "AGUA DOCE DO NORTE",
+        "bairro": "Centro",
+        "uf": "ES",
+        "cep": "29.820-000",
+        "telefone": "(27) 9963-9093",
+        "data_situacao": "07/01/2022",
+        "motivo_situacao": "OMISSÃO DE DECLARAÇÕES",
+        "cnpj": "14.764.601/0001-85",
+        "ultima_atualizacao": "2024-10-16T23:59:59.000Z",
+        "status": "OK",
+        "fantasia": "",
+        "email": "",
+        "efr": "",
+        "situacao_especial": "",
+        "data_situacao_especial": "",
+        "atividade_principal": [
+            {
+                "code": "00.00-0-00",
+                "text": "********"
+            }
+        ],
+        "atividades_secundarias": [
+            {
+                "code": "00.00-0-00",
+                "text": "Não informada"
+            }
+        ],
+        "capital_social": "1.00",
+        "qsa": [],
+        "simples": {
+            "optante": true,
+            "data_opcao": "14/12/2011",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "simei": {
+            "optante": true,
+            "data_opcao": "14/12/2011",
+            "data_exclusao": null,
+            "ultima_atualizacao": "2024-10-16T23:59:59.000Z"
+        },
+        "extra": {},
+        "billing": {
+            "free": true,
+            "database": true
+        }
+    }
+]
