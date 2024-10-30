@@ -53,7 +53,6 @@ def consultar_cnpj(cnpj):
             logging.warning(f"Resposta não OK para o CNPJ {cnpj}: {response.status_code}")
             return None
 
-        #return response.json()
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao consultar o CNPJ {cnpj}: {e}")
         return None
@@ -62,11 +61,13 @@ def salvar_parcial(resultados, arquivo_json, excel_saida):
     resultados_existente = []
 
     #salvado consulta parcial em json
-    if os.path.exists(arquivo_json) and os.path.getsize(arquivo_json) > 0:
+    #if os.path.exists(arquivo_json) and os.path.getsize(arquivo_json) > 0:
+    if os.path.exists(arquivo_json):    
         with open(arquivo_json, 'r', encoding='utf-8') as file:
             try:
                 resultados_existente = json.load(file)
                 #print(f" Leitura de json nas consultas parciais {resultados_existente}")
+                
                 # Verifica se o conteúdo carregado é uma lista
                 if not isinstance(resultados_existente, list):
                     resultados_existente = []
@@ -78,7 +79,7 @@ def salvar_parcial(resultados, arquivo_json, excel_saida):
                 resultados_existente = []
 
     # Certifique-se de que 'resultados' é uma lista
-    if isinstance(resultados, dict):
+    if not isinstance(resultados, dict):
         resultados_existente.append(resultados)  # Adiciona um dicionário único
     elif isinstance(resultados, list):  # Se resultados é uma lista de dicionários
         resultados_existente.extend(resultados)  # Adiciona todos os itens da lista
@@ -86,11 +87,15 @@ def salvar_parcial(resultados, arquivo_json, excel_saida):
         logging.error('Resultados não é um dicionário ou uma lista de dicionários.')
 
     # Determina a ordem das colunas a partir do primeiro resultado
-    #colunas_padrao = []
+    colunas_padrao = []
     if resultados_existente:
-        if isinstance(resultados_existente[0], dict):
+        if isinstance(resultados_existente[0], list):
             colunas_padrao = list(resultados_existente[0].keys())
             print(f"resultados existentes {resultados_existente}")
+            print(f"coluna padrão {colunas_padrao}")
+
+            logging.info(f"resultados existentes {resultados_existente}")
+            logging.info(f"coluna padrão {colunas_padrao}")
         else:
             logging.error('O primeiro item em resultados_existente não é um dicionário.')
 

@@ -53,7 +53,6 @@ def consultar_cnpj(cnpj):
             logging.warning(f"Resposta não OK para o CNPJ {cnpj}: {response.status_code}")
             return None
 
-        #return response.json()
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao consultar o CNPJ {cnpj}: {e}")
         return None
@@ -180,9 +179,9 @@ def json_para_excel(arquivo_json, excel_saida):
 #Caminho das informações pelas funções
 
 #Caminho para o arquivo Excel com os CNPJs
-arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler_bloco1.xlsx'
-arquivo_json_resultados = 'resultados_cnpj_bloco1.json'
-arquivo_excel_resultados = 'resultados_cnpj_bloco1.xlsx'
+arquivo_excel_cnpjs = r'C:\Users\LARYSSA\OneDrive - Distribuidora Sooretama\Área de Trabalho\Laryssa\projetos\leitor_cnpj\cnpj_ler_bloco3.xlsx'
+arquivo_json_resultados = 'resultados_cnpj_bloco3.json'
+arquivo_excel_resultados = 'resultados_cnpj_bloco3.xlsx'
 
 #Lendo os CNPJs do arquivo Excel
 cnpjs = ler_cnpjs_excel(arquivo_excel_cnpjs)
